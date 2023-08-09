@@ -1,12 +1,13 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty } from 'class-validator';
+import { Trip } from 'db/interface/types';
 
-export class CreateTripDto {
+export class TripEntity implements Trip {
   @ApiProperty()
-  @IsNotEmpty()
+  trip_id: number;
+
+  @ApiProperty()
   pickup_address: string;
 
   @ApiProperty()
-  @IsNotEmpty()
   destination_address: string;
 }
