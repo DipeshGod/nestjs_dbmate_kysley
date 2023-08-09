@@ -10,4 +10,8 @@ export class TripEntity implements Trip {
 
   @ApiProperty()
   destination_address: string;
+
+  constructor({ ...data }) {
+    Object.assign(this, data);
+  }
 }
